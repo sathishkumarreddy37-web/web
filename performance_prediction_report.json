@@ -1,0 +1,152 @@
+{
+  "timestamp": "2026-03-12T14:21:11.303549",
+  "current_performance": {
+    "load_time": {
+      "value": 4.5,
+      "status": "FAIR",
+      "benchmark": "< 3s excellent, 3-5s good, > 5s poor"
+    },
+    "response_time": {
+      "value": 800,
+      "status": "FAIR",
+      "benchmark": "< 200ms excellent, 200-500ms good, > 500ms poor"
+    },
+    "resource_count": {
+      "value": 120,
+      "status": "POOR",
+      "benchmark": "< 50 excellent, 50-100 good, > 100 poor"
+    },
+    "page_size": {
+      "value": 2500,
+      "status": "FAIR",
+      "benchmark": "< 1MB excellent, 1-3MB good, > 3MB poor"
+    }
+  },
+  "trend_analysis": {
+    "trend": "DEGRADING",
+    "change_percentage": 33.33,
+    "data_points": 5,
+    "analysis_period_days": 5
+  },
+  "predictions": {
+    "next_30_days": {
+      "load_time": {
+        "predicted": 16.5,
+        "current": 4.5,
+        "change": 266.67,
+        "status": "POOR"
+      },
+      "risk_level": "HIGH_RISK"
+    },
+    "confidence": "MEDIUM",
+    "methodology": "Statistical analysis with linear regression"
+  },
+  "bottlenecks": [
+    {
+      "type": "SLOW_PAGE_LOAD",
+      "severity": "MEDIUM",
+      "metric": "page_load_time",
+      "value": 4.5,
+      "threshold": 3,
+      "impact": "Suboptimal user experience",
+      "causes": [
+        "Unoptimized images",
+        "Multiple HTTP requests",
+        "No compression"
+      ]
+    },
+    {
+      "type": "TOO_MANY_RESOURCES",
+      "severity": "HIGH",
+      "metric": "resource_count",
+      "value": 120,
+      "threshold": 50,
+      "impact": "Increased latency and bandwidth usage",
+      "causes": [
+        "No resource bundling",
+        "Too many external dependencies",
+        "Unoptimized asset loading"
+      ]
+    },
+    {
+      "type": "SLOW_SERVER_RESPONSE",
+      "severity": "MEDIUM",
+      "metric": "first_response_time",
+      "value": 800,
+      "threshold": 200,
+      "impact": "Delayed initial rendering",
+      "causes": [
+        "Slow database queries",
+        "Inefficient backend code",
+        "No CDN",
+        "Unoptimized server config"
+      ]
+    }
+  ],
+  "optimization_recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "Resources",
+      "title": "Reduce HTTP Requests",
+      "description": "120 resources is excessive",
+      "actions": [
+        "Bundle CSS and JavaScript files",
+        "Use CSS sprites for images",
+        "Inline critical CSS",
+        "Remove unused dependencies",
+        "Use HTTP/2 or HTTP/3",
+        "Implement resource preloading"
+      ],
+      "expected_improvement": "40-60% reduction in requests",
+      "effort": "Medium",
+      "tools": [
+        "Webpack",
+        "Rollup",
+        "Parcel",
+        "Vite"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Best Practices",
+      "title": "Implement Performance Monitoring",
+      "description": "Continuous performance monitoring and alerting",
+      "actions": [
+        "Set up Real User Monitoring (RUM)",
+        "Configure performance budgets",
+        "Monitor Core Web Vitals (LCP, FID, CLS)",
+        "Set up automated performance testing",
+        "Track performance in CI/CD pipeline"
+      ],
+      "expected_improvement": "Proactive performance management",
+      "effort": "Low",
+      "tools": [
+        "Google Analytics",
+        "Lighthouse CI",
+        "WebPageTest",
+        "SpeedCurve"
+      ]
+    },
+    {
+      "priority": "LOW",
+      "category": "Advanced",
+      "title": "Progressive Enhancement",
+      "description": "Enhance user experience for modern browsers",
+      "actions": [
+        "Implement Service Workers for offline support",
+        "Use HTTP/3 and QUIC protocol",
+        "Implement prefetching for likely navigation",
+        "Use WebP/AVIF with fallbacks",
+        "Implement adaptive loading based on network speed"
+      ],
+      "expected_improvement": "Enhanced UX for modern devices",
+      "effort": "High",
+      "tools": [
+        "Workbox",
+        "Next.js",
+        "Nuxt.js"
+      ]
+    }
+  ],
+  "performance_score": 42
+}

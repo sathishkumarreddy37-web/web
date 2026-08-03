@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-12T14:21:11.223228",
+  "summary": {
+    "status": "complete",
+    "total_comparisons": 2,
+    "passed": 1,
+    "failed": 1,
+    "pass_rate": 50.0,
+    "threshold_used": 5.0,
+    "significant_changes": [
+      {
+        "page_name": "test_page",
+        "diff_percentage": 33.33,
+        "passed": false
+      }
+    ]
+  },
+  "details": [
+    {
+      "status": "compared",
+      "page_name": "test_page",
+      "baseline_path": "test_outputs\\next_level_tests\\baselines\\baseline_test_page.png",
+      "difference_percentage": 0.0,
+      "threshold_percentage": 5.0,
+      "is_significant_change": false,
+      "passed": true,
+      "verdict": "PASS",
+      "timestamp": "2026-03-12T14:21:11.218232"
+    },
+    {
+      "status": "compared",
+      "page_name": "test_page",
+      "baseline_path": "test_outputs\\next_level_tests\\baselines\\baseline_test_page.png",
+      "difference_percentage": 33.33,
+      "threshold_percentage": 5.0,
+      "is_significant_change": true,
+      "passed": false,
+      "verdict": "FAIL",
+      "timestamp": "2026-03-12T14:21:11.221229"
+    }
+  ]
+}

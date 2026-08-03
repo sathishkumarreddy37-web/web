@@ -1,0 +1,163 @@
+{
+  "timestamp": "2026-03-12T14:21:11.260779",
+  "wcag_level": "AA",
+  "compliance_score": 29,
+  "issues": [
+    {
+      "wcag_sc": "1.1.1",
+      "level": "A",
+      "principle": "Perceivable",
+      "guideline": "Text Alternatives",
+      "issue": "2 images missing alt text",
+      "impact": "Screen reader users cannot understand image content",
+      "severity": "HIGH",
+      "affected_groups": [
+        "Blind users",
+        "Screen reader users"
+      ],
+      "fix": "Add descriptive alt attributes to all images: <img src='image.jpg' alt='Description'>",
+      "code_example": "<img src='logo.png' alt='Company Logo'>"
+    },
+    {
+      "wcag_sc": "1.3.1",
+      "level": "A",
+      "principle": "Perceivable",
+      "guideline": "Adaptable",
+      "issue": "No H1 heading found",
+      "impact": "Page structure unclear to assistive technologies",
+      "severity": "MEDIUM",
+      "affected_groups": [
+        "Screen reader users",
+        "Cognitive disability users"
+      ],
+      "fix": "Add a single H1 heading as main page title",
+      "code_example": "<h1>Main Page Title</h1>"
+    },
+    {
+      "wcag_sc": "1.4.3",
+      "level": "AA",
+      "principle": "Perceivable",
+      "guideline": "Distinguishable",
+      "issue": "Color contrast should be manually verified",
+      "impact": "Low contrast text difficult to read",
+      "severity": "LOW",
+      "affected_groups": [
+        "Low vision users",
+        "Elderly users"
+      ],
+      "fix": "Ensure contrast ratio of at least 4.5:1 for normal text, 3:1 for large text",
+      "code_example": "Use tools like WebAIM Contrast Checker"
+    },
+    {
+      "wcag_sc": "3.2.2",
+      "level": "A",
+      "principle": "Understandable",
+      "guideline": "Predictable",
+      "issue": "2 form inputs without labels",
+      "impact": "Users cannot identify input purpose",
+      "severity": "HIGH",
+      "affected_groups": [
+        "Screen reader users",
+        "Cognitive disability users"
+      ],
+      "fix": "Add <label> elements or aria-label attributes to all inputs",
+      "code_example": "<label for='email'>Email:</label><input id='email' type='email'>"
+    },
+    {
+      "wcag_sc": "2.4.7",
+      "level": "AA",
+      "principle": "Operable",
+      "guideline": "Navigable",
+      "issue": "No visible focus indicators detected",
+      "impact": "Keyboard users cannot see which element has focus",
+      "severity": "MEDIUM",
+      "affected_groups": [
+        "Keyboard-only users",
+        "Motor disability users"
+      ],
+      "fix": "Ensure focusable elements have visible focus indicators",
+      "code_example": "button:focus { outline: 2px solid blue; }"
+    },
+    {
+      "wcag_sc": "3.1.1",
+      "level": "A",
+      "principle": "Understandable",
+      "guideline": "Readable",
+      "issue": "Page language not specified",
+      "impact": "Screen readers cannot pronounce text correctly",
+      "severity": "MEDIUM",
+      "affected_groups": [
+        "Screen reader users",
+        "International users"
+      ],
+      "fix": "Add lang attribute to <html> tag",
+      "code_example": "<html lang='en'>"
+    },
+    {
+      "wcag_sc": "3.3.1",
+      "level": "A",
+      "principle": "Understandable",
+      "guideline": "Input Assistance",
+      "issue": "Forms lack error identification",
+      "impact": "Users cannot identify and correct input errors",
+      "severity": "MEDIUM",
+      "affected_groups": [
+        "All users",
+        "Cognitive disability users"
+      ],
+      "fix": "Provide clear error messages for invalid inputs",
+      "code_example": "<span role='alert' class='error'>Email is required</span>"
+    },
+    {
+      "wcag_sc": "3.3.2",
+      "level": "A",
+      "principle": "Understandable",
+      "guideline": "Input Assistance",
+      "issue": "Form fields missing required field indicators",
+      "impact": "Users don't know which fields are mandatory",
+      "severity": "LOW",
+      "affected_groups": [
+        "All users",
+        "Cognitive disability users"
+      ],
+      "fix": "Mark required fields clearly",
+      "code_example": "<label>Email <span aria-label='required'>*</span></label>"
+    },
+    {
+      "wcag_sc": "4.1.2",
+      "level": "A",
+      "principle": "Robust",
+      "guideline": "Compatible",
+      "issue": "No ARIA attributes detected",
+      "impact": "Custom UI components may not be accessible",
+      "severity": "LOW",
+      "affected_groups": [
+        "Screen reader users",
+        "Assistive technology users"
+      ],
+      "fix": "Add ARIA attributes to custom components",
+      "code_example": "<button aria-label='Close dialog' aria-pressed='false'>"
+    }
+  ],
+  "recommendations": [
+    "\ud83d\udea8 URGENT: Fix 2 high-severity issues first",
+    "  \u2022 2 images missing alt text: Add descriptive alt attributes to all images: <img src='image.jpg' alt='Description'>",
+    "  \u2022 2 form inputs without labels: Add <label> elements or aria-label attributes to all inputs",
+    "\u26a0\ufe0f IMPORTANT: Address 4 medium-severity issues",
+    "  \u2022 No H1 heading found: Add a single H1 heading as main page title",
+    "  \u2022 No visible focus indicators detected: Ensure focusable elements have visible focus indicators",
+    "\u2139\ufe0f NICE TO HAVE: Consider 3 low-severity improvements"
+  ],
+  "affected_users": [
+    "All users",
+    "Assistive technology users",
+    "Blind users",
+    "Cognitive disability users",
+    "Elderly users",
+    "International users",
+    "Keyboard-only users",
+    "Low vision users",
+    "Motor disability users",
+    "Screen reader users"
+  ]
+}

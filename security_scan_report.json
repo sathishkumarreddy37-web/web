@@ -1,0 +1,167 @@
+{
+  "url": "http://example.com",
+  "timestamp": "2026-03-12T14:21:11.232794",
+  "checks_performed": [
+    "Security Headers",
+    "Cookie Security",
+    "CSRF Protection",
+    "XSS Prevention",
+    "SQL Injection",
+    "Sensitive Data Exposure",
+    "TLS/HTTPS"
+  ],
+  "vulnerabilities": [
+    {
+      "type": "Missing Security Header",
+      "header": "content-security-policy",
+      "severity": "HIGH",
+      "owasp_category": "A05:2021 \u2013 Security Misconfiguration",
+      "description": "Missing Content-Security-Policy header",
+      "impact": "Allows XSS attacks and data injection",
+      "fix": "Add header: Content-Security-Policy: default-src 'self'",
+      "cvss_score": 7.5
+    },
+    {
+      "type": "Missing Security Header",
+      "header": "x-frame-options",
+      "severity": "MEDIUM",
+      "owasp_category": "A05:2021 \u2013 Security Misconfiguration",
+      "description": "Missing X-Frame-Options header",
+      "impact": "Vulnerable to clickjacking attacks",
+      "fix": "Add header: X-Frame-Options: DENY or SAMEORIGIN",
+      "cvss_score": 5.5
+    },
+    {
+      "type": "Missing Security Header",
+      "header": "x-content-type-options",
+      "severity": "MEDIUM",
+      "owasp_category": "A05:2021 \u2013 Security Misconfiguration",
+      "description": "Missing X-Content-Type-Options header",
+      "impact": "Vulnerable to MIME type sniffing",
+      "fix": "Add header: X-Content-Type-Options: nosniff",
+      "cvss_score": 5.5
+    },
+    {
+      "type": "Missing Security Header",
+      "header": "strict-transport-security",
+      "severity": "HIGH",
+      "owasp_category": "A02:2021 \u2013 Cryptographic Failures",
+      "description": "Missing Strict-Transport-Security header",
+      "impact": "Vulnerable to man-in-the-middle attacks",
+      "fix": "Add header: Strict-Transport-Security: max-age=31536000; includeSubDomains",
+      "cvss_score": 7.5
+    },
+    {
+      "type": "Missing Security Header",
+      "header": "x-xss-protection",
+      "severity": "MEDIUM",
+      "owasp_category": "A03:2021 \u2013 Injection",
+      "description": "Missing X-XSS-Protection header",
+      "impact": "No XSS filter in older browsers",
+      "fix": "Add header: X-XSS-Protection: 1; mode=block",
+      "cvss_score": 5.5
+    },
+    {
+      "type": "Missing Security Header",
+      "header": "referrer-policy",
+      "severity": "LOW",
+      "owasp_category": "A01:2021 \u2013 Broken Access Control",
+      "description": "Missing Referrer-Policy header",
+      "impact": "May leak sensitive URL information",
+      "fix": "Add header: Referrer-Policy: no-referrer or strict-origin-when-cross-origin",
+      "cvss_score": 3.0
+    },
+    {
+      "type": "Missing Security Header",
+      "header": "permissions-policy",
+      "severity": "LOW",
+      "owasp_category": "A05:2021 \u2013 Security Misconfiguration",
+      "description": "Missing Permissions-Policy header",
+      "impact": "No control over browser features",
+      "fix": "Add header: Permissions-Policy: geolocation=(), microphone=()",
+      "cvss_score": 3.0
+    },
+    {
+      "type": "Insecure Cookie",
+      "cookie": "session",
+      "severity": "HIGH",
+      "owasp_category": "A02:2021 \u2013 Cryptographic Failures",
+      "description": "Cookie 'session' missing Secure flag",
+      "impact": "Cookie can be transmitted over unencrypted connections",
+      "fix": "Set Secure attribute: Set-Cookie: name=value; Secure",
+      "cvss_score": 7.5
+    },
+    {
+      "type": "Cookie Accessible to JavaScript",
+      "cookie": "session",
+      "severity": "MEDIUM",
+      "owasp_category": "A03:2021 \u2013 Injection",
+      "description": "Cookie 'session' missing HttpOnly flag",
+      "impact": "Cookie accessible via JavaScript, vulnerable to XSS",
+      "fix": "Set HttpOnly attribute: Set-Cookie: name=value; HttpOnly",
+      "cvss_score": 5.3
+    },
+    {
+      "type": "CSRF Vulnerable Cookie",
+      "cookie": "session",
+      "severity": "MEDIUM",
+      "owasp_category": "A01:2021 \u2013 Broken Access Control",
+      "description": "Cookie 'session' missing SameSite attribute",
+      "impact": "Vulnerable to CSRF attacks",
+      "fix": "Set SameSite attribute: Set-Cookie: name=value; SameSite=Strict",
+      "cvss_score": 6.1
+    },
+    {
+      "type": "Potential XSS Vulnerability",
+      "indicator": "Inline JavaScript",
+      "severity": "HIGH",
+      "owasp_category": "A03:2021 \u2013 Injection",
+      "description": "Found Inline JavaScript in page content",
+      "impact": "May allow Cross-Site Scripting attacks",
+      "fix": "Sanitize and encode all user inputs before rendering",
+      "cvss_score": 7.3
+    },
+    {
+      "type": "Potential XSS Vulnerability",
+      "indicator": "Event handlers",
+      "severity": "HIGH",
+      "owasp_category": "A03:2021 \u2013 Injection",
+      "description": "Found Event handlers in page content",
+      "impact": "May allow Cross-Site Scripting attacks",
+      "fix": "Sanitize and encode all user inputs before rendering",
+      "cvss_score": 7.3
+    },
+    {
+      "type": "Sensitive Data Exposure",
+      "data_type": "Email addresses",
+      "severity": "CRITICAL",
+      "owasp_category": "A02:2021 \u2013 Cryptographic Failures",
+      "description": "Found Email addresses in page source",
+      "impact": "Sensitive information exposed to users",
+      "fix": "Remove sensitive data from client-side code",
+      "cvss_score": 9.1
+    },
+    {
+      "type": "Sensitive Data Exposure",
+      "data_type": "Social Security Numbers",
+      "severity": "CRITICAL",
+      "owasp_category": "A02:2021 \u2013 Cryptographic Failures",
+      "description": "Found Social Security Numbers in page source",
+      "impact": "Sensitive information exposed to users",
+      "fix": "Remove sensitive data from client-side code",
+      "cvss_score": 9.1
+    },
+    {
+      "type": "No HTTPS",
+      "severity": "CRITICAL",
+      "owasp_category": "A02:2021 \u2013 Cryptographic Failures",
+      "description": "Website not using HTTPS",
+      "impact": "All data transmitted in clear text",
+      "fix": "Implement HTTPS with valid SSL/TLS certificate",
+      "cvss_score": 9.3
+    }
+  ],
+  "security_score": 0,
+  "risk_level": "CRITICAL",
+  "total_vulnerabilities": 15
+}
